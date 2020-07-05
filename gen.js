@@ -58,6 +58,7 @@ function generate() {
     title.innerHTML = text;
 
     $('.star-wars,.fade,#arrow').remove();
+    $('#gen_button').css({'font-size': '14px'});
     $('body').append(getCrawlText(text));
     $('#gen_button').text("Generate New Movie");
 
@@ -67,7 +68,7 @@ function generate() {
 
 function play() {
     var audio = document.getElementById('song');
-    audio.volume = 0.3;
+    audio.volume = 0.25;
     if (audio.paused) {
         audio.play();
     } else {

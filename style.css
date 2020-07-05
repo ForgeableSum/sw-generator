@@ -58,6 +58,7 @@ h1 {
 	width: 40px;
 	height: auto; 
 	cursor: pointer; 
+	z-index: 10px; 
 }
 
 

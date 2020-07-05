@@ -33,10 +33,9 @@ function integer_to_roman(num) {
     return Array(+digits.join("") + 1).join("M") + roman_num;
 }
 
-function getCrawlText(title) {
-    var epNumber = integer_to_roman(Math.floor(Math.random() * 100));
+function getCrawlText(epNumber,title) {
 
-    var crawl = '<div class="fade"></div><section class="star-wars"> <div class="crawl"> <div class="title"> <p>Episode ' + epNumber + '</p><h1>' + title + '</h1> </div><p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p><p>During the battle, Rebel spies managed to steal secret plans to the Empire\'s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p><p>Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy….</p></div></section></body>';
+    var crawl = '<div class="fade"></div><section class="star-wars"> <div class="crawl"> <div class="title"> <p>Episode ' + epNumber + '</p><h1>' + title + '</h1> </div><p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p><p>During the battle, Rebel spies managed to steal secret plans to the Empire\'s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p><p>Pursued by the Empire\'s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy ...</p></div></section></body>';
 
     return crawl;
 
@@ -53,13 +52,17 @@ function generate() {
         var randWordIndex = Math.floor(Math.random() * data[order[i]].length);
         var word = data[order[i]][randWordIndex];
         text += word + ' ';
-    }
-    var title = document.getElementById("title");
-    title.innerHTML = text;
 
+    }
+    var epNumber = integer_to_roman(Math.floor(Math.random() * 100));
+
+    var title = document.getElementById("title");
+    title.innerHTML = 'Episode ' + epNumber + ': ' + text;
+
+    $('#top_area').css({'background-color': '#000'}); 
     $('.star-wars,.fade,#arrow').remove();
     $('#gen_button').css({'font-size': '14px'});
-    $('body').append(getCrawlText(text));
+    $('body').append(getCrawlText(epNumber,text));
     $('#gen_button').text("Generate New Movie");
 
 

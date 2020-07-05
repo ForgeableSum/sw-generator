@@ -1,0 +1,17 @@
+{
+  "name": "sw-generator",
+  "version": "1.0.0",
+  "description": "Generates a random Star Wars movie title, episode number and prologue screen opening crawl with some funny music.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ForgeableSum/sw-generator"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "ForgeableSum",
+  "license": "MIT",
+  "dependencies": {
+    "moby": "^1.1.2"
+  }
+}

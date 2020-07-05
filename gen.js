@@ -1,14 +1,11 @@
-// https://css-tricks.com/snippets/css/star-wars-crawl-text/
-
-
-var data = {
+var titleData = {
     0: ["The", "A New", "The Last"],
     1: ["Revenge", "Hope", "Force", "Sith", "Skywalker", "Jedi", "Emperor", "Return"],
     2: ["Rise", "Return", "Awaken", "Strike", "Attack"],
     3: ["of the"],
 }
 
-var orders = [
+var titleOrders = [
     [0, 1, 3, 2],
     [0, 2, 3, 2],
     [1, 3, 2],
@@ -44,13 +41,13 @@ function getCrawlText(epNumber,title) {
 
 function generate() {
     play();
-    var rand = Math.floor(Math.random() * Object.keys(data).length);
+    var rand = Math.floor(Math.random() * Object.keys(titleData).length);
 
-    var order = orders[rand];
+    var order = titleOrders[rand];
     var text = '';
     for (var i = 0; i < order.length; i++) {
-        var randWordIndex = Math.floor(Math.random() * data[order[i]].length);
-        var word = data[order[i]][randWordIndex];
+        var randWordIndex = Math.floor(Math.random() * titleData[order[i]].length);
+        var word = titleData[order[i]][randWordIndex];
         text += word + ' ';
 
     }
@@ -86,4 +83,3 @@ $('#gen_button').on('click', function () {
 
 
 })
-//   generate();

@@ -1,20 +1,48 @@
 body {
 	color: #FFF;
 	background-color: #000;
+	font-family: 'Pathway Gothic One', sans-serif;
+
 }
 
 h1 {
 	text-align: center;
 	margin-top: 50px;
-	font-size: 52px;
+	font-size: 32px;
+	text-transform: uppercase;
 }
 
-button {
+#gen_button {
 	text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 23px;
+    position: relative;
+    z-index: 999;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#disclaimer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-size: 12px;
+    position: fixed;
+	bottom: 0;
+	color: #a9a9a9; 
+
+
+}
+
+#arrow {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	font-size: 23px;
 }
 
 body {

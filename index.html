@@ -9,9 +9,10 @@
 
 <body>
 
-    <h1 id="title"></h1>
-
-    <button id="gen_button">Generate Title</button>
+    <h1 id="title">Star Wars Movie Generator</h1>
+<img id="arrow" src="https://iadolpholiverbush.files.wordpress.com/2018/09/arrows.gif?w=319&h=168" />
+    <button id="gen_button">Generate</button>
+    <p id="disclaimer">** Not affiliated with Star Wars, The Walt Disney company, Lucasfilm Ltd., Bad Robot or any of their affiliates.</p>
     <audio id="song" src="media/song.mp3"></audio>
 
     <script>
@@ -73,7 +74,7 @@
             var title = document.getElementById("title");
             title.innerHTML = text;
 
-            $('.star-wars,.fade').remove();
+            $('.star-wars,.fade,#arrow').remove();
             $('body').append(getCrawlText(text));
 
 
@@ -91,7 +92,14 @@
             }
         }
 
-        document.getElementById("gen_button").addEventListener("click", generate);
+
+        $('#gen_button').on('click',function() {
+
+            generate(); 
+            $('#gen_button').text("Generate New Movie");
+
+
+        })
         //   generate();
     </script>
 

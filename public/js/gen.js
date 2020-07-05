@@ -1,14 +1,11 @@
-// https://css-tricks.com/snippets/css/star-wars-crawl-text/
-
-
-var data = {
+var titleData = {
     0: ["The", "A New", "The Last"],
     1: ["Revenge", "Hope", "Force", "Sith", "Skywalker", "Jedi", "Emperor", "Return"],
     2: ["Rise", "Return", "Awaken", "Strike", "Attack"],
     3: ["of the"],
 }
 
-var orders = [
+var titleOrders = [
     [0, 1, 3, 2],
     [0, 2, 3, 2],
     [1, 3, 2],
@@ -35,7 +32,17 @@ function integer_to_roman(num) {
 
 function getCrawlText(epNumber,title) {
 
-    var crawl = '<div class="fade"></div><section class="star-wars"> <div class="crawl"> <div class="title"> <p>Episode ' + epNumber + '</p><h1>' + title + '</h1> </div><p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p><p>During the battle, Rebel spies managed to steal secret plans to the Empire\'s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p><p>Pursued by the Empire\'s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy ...</p></div></section></body>';
+    var body = '<p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p><p>During the battle, Rebel spies managed to steal secret plans to the Empire\'s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p><p>Pursued by the Empire\'s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy ...</p>';
+    var body = 'dog';
+
+    jQuery.post('/spin-text', body, function (data) {
+        
+        console.log(data);
+
+
+    },'html');
+
+    var crawl = '<div class="fade"></div><section class="star-wars"> <div class="crawl"> <div class="title"> <p>Episode ' + epNumber + '</p><h1>' + title + '</h1> </div>' + body + '</div></section></body>';
 
     return crawl;
 
@@ -44,17 +51,17 @@ function getCrawlText(epNumber,title) {
 
 function generate() {
     play();
-    var rand = Math.floor(Math.random() * Object.keys(data).length);
+    var rand = Math.floor(Math.random() * Object.keys(titleData).length);
 
-    var order = orders[rand];
+    var order = titleOrders[rand];
     var text = '';
     for (var i = 0; i < order.length; i++) {
-        var randWordIndex = Math.floor(Math.random() * data[order[i]].length);
-        var word = data[order[i]][randWordIndex];
+        var randWordIndex = Math.floor(Math.random() * titleData[order[i]].length);
+        var word = titleData[order[i]][randWordIndex];
         text += word + ' ';
 
     }
-    var epNumber = integer_to_roman(Math.floor(Math.random() * 100));
+    var epNumber = integer_to_roman(Math.floor((Math.random() + 10) * 100));
 
     var title = document.getElementById("title");
     title.innerHTML = 'Episode ' + epNumber + ': ' + text;
@@ -86,4 +93,3 @@ $('#gen_button').on('click', function () {
 
 
 })
-//   generate();

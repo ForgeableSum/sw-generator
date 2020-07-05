@@ -54,7 +54,7 @@ function generate() {
         text += word + ' ';
 
     }
-    var epNumber = integer_to_roman(Math.floor(Math.random() * 100));
+    var epNumber = integer_to_roman(Math.floor((Math.random() + 10) * 100));
 
     var title = document.getElementById("title");
     title.innerHTML = 'Episode ' + epNumber + ': ' + text;

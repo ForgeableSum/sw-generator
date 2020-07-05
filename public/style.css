@@ -111,7 +111,7 @@ z-index: 99;
 	position: relative;
 	top: 99999px;
 	transform-origin: 50% 100%;
-	animation: crawl 60s linear;
+	animation: crawl 60s linear; /* controls the speed. lower to make faster */
 }
 
 .crawl>.title {

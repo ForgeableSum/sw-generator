@@ -7,7 +7,7 @@
     "url": "https://github.com/ForgeableSum/sw-generator"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server/server.js"
   },
   "author": "ForgeableSum",
   "license": "MIT",

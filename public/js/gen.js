@@ -1,13 +1,13 @@
 var titleData = {
     0: ["The", "A New", "The Last"],
-    1: ["Revenge", "Hope", "Force", "Sith", "Skywalker", "Jedi", "Emperor", "Return","Duel","Fate"],
+    1: ["Revenge", "Hope", "Force", "Sith", "Skywalker", "Jedi", "Emperor", "Return","Duel","Fate","Destiny"],
     2: ["Rise", "Return", "Strike", "Attack","Beginning","End"],
     3: ["of the"],
 }
 
 var titleOrders = [
     [0, 1, 3, 2],
-    [0, 2, 3, 2],
+    [0, 2, 3, 1],
     [1, 3, 2],
     [2, 3, 1]
 ];

@@ -21,7 +21,7 @@ crawlTexts.push('War! The Republic is crumbling under attacks by the bad Sith Lo
 
 // ep 4
 
-crawlTexts.push('It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire\'s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire\'s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...');
+crawlTexts.push('It is a period of civil war. Rebel spaceships, striking from a hidden base, have achieved their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire\'s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire\'s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...');
 
 
 // ep 5
@@ -49,7 +49,7 @@ for (var i = 0; i < crawlTexts.length; i++) {
     crawlTexts[i] = string_to_array(crawlTexts[i]);
 }
 
-var blacklist = ['galaxy','planet','thousand','is','a','the','in','but','to','and','or','his','her','of','that','can','by','even','from','having','has','were','not','now','star','systems'];
+var blacklist = ['galaxy','planet','thousand','is','a','the','in','but','to','and','or','his','her','of','that','can','by','even','from','having','has','were','not','now','star','systems','are','an'];
 
 function getOpeningCrawlText() {
 
@@ -81,7 +81,11 @@ function getOpeningCrawlText() {
         }    
  
         if (syn.length >= minNumberSynonyms) {
-            newBody += " " + syn[Math.floor(Math.random() * syn.length)];
+            var index = Math.floor(Math.random() * syn.length); 
+            if ((syn.length) > 30) {
+                index = Math.floor(Math.random() * 29); 
+            }
+            newBody += " " + syn[index];
             if (hasPeriod) {
                 newBody += ".";
             } else if (hasComma) {

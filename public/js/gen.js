@@ -1,7 +1,7 @@
 var titleData = {
     0: ["The", "A New", "The Last"],
-    1: ["Revenge", "Hope", "Force", "Sith", "Skywalker", "Jedi", "Emperor", "Return"],
-    2: ["Rise", "Return", "Awaken", "Strike", "Attack"],
+    1: ["Revenge", "Hope", "Force", "Sith", "Skywalker", "Jedi", "Emperor", "Return","Duel","Fate"],
+    2: ["Rise", "Return", "Strike", "Attack","Beginning","End"],
     3: ["of the"],
 }
 
@@ -52,7 +52,7 @@ function replaceCrawlText(epNumber,title) {
 }
 
 function generate() {
-    play();
+    playAudio();
     var rand = Math.floor(Math.random() * Object.keys(titleData).length);
 
     var order = titleOrders[rand];
@@ -76,11 +76,11 @@ function generate() {
 }
 
 
-function play() {
+function playAudio() {
     var audio = document.getElementById('song');
     audio.volume = 0.25;
     if (audio.paused) {
-        audio.play();
+        audio.playAudio();
     } else {
         audio.currentTime = 0
     }

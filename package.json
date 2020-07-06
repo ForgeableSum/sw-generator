@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "forever start server/server.js",
-    "stop": "forever stop server/server.js"
+    "stop": "forever stop server/server.js",
+    "restart": "forever restart server/server.js"
   },
   "author": "ForgeableSum",
   "license": "MIT",

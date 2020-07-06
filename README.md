@@ -6,6 +6,10 @@ sw-generator uses a thesaurus, as well as some lexiconic / semantic trickery to 
 
 I have no idea why I made this...
 
+## Demo
+
+http://www.starwarsmoviegenerator.com/
+
 ## Installation
 
 1. Install node and npm. 

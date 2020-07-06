@@ -1,7 +1,7 @@
 var titleData = {
     0: ["The", "A New", "The Last"],
-    1: ["Revenge", "Hope", "Force", "Sith", "Skywalker", "Jedi", "Emperor", "Return","Duel","Fate","Destiny"],
-    2: ["Rise", "Return", "Strike", "Attack","Beginning","End"],
+    1: ["Revenge", "Hope", "Force", "Sith", "Skywalker", "Jedi", "Emperor", "Return"],
+    2: ["Rise", "Return", "Strike", "Attack"],
     3: ["of the"],
 }
 

@@ -10,13 +10,13 @@ crawlTexts = [];
 
 // ep 1
 
-crawlTexts.push('Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems is in dispute. Hoping to resolve the matter with a blockade of deadly battleships, the greedy Trade Federation has stopped all shipping to the small planet of Naboo. While the Congress of the Republic endlessly debates this alarming chain of events, the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace and justice in the galaxy, to settle the conflict...');
+crawlTexts.push('Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outer star systems is in dispute. Hoping to resolve the matter with a blockade of deadly battleships, the greedy Trade Federation has stopped all shipping to the small planet of Naboo. While the Congress of the Republic endlessly debates this alarming chain of events, the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace and justice in the galaxy, to settle the conflict...');
 
 // ep 2
 crawlTexts.push('There is unrest in the Galactic Senate. Several thousand solar systems have declared their intentions to leave the Republic. This separatist movement, under the leadership of the mysterious Count Dooku, has made it difficult for the limited number of Jedi Knights to maintain peace and order in the galaxy. Senator Amidala, the former Queen of Naboo, is returning to the Galactic Senate to vote on the critical issue of creating an ARMY OF THE REPUBLIC to assist the overwhelmed Jedi...');
 
 // ep 3
-crawlTexts.push('War! The Republic is crumbling under attacks by the ruthless Sith Lord, Count Dooku. There are heroes on both sides. Evil is everywhere. In a stunning move, the fiendish droid leader, General Grievous, has swept into the Republic capital and kidnapped Chancellor Palpatine, leader of the Galactic Senate. As the Separatist Droid Army attempts to flee the besieged capital with their valuable hostage, two Jedi Knights lead a desperate mission to rescue the captive Chancellor...');
+crawlTexts.push('War! The Republic is crumbling under attacks by the bad Sith Lord, Count Dooku. There are heroes on both sides. Evil is everywhere. In a stunning move, the fiendish droid leader, General Grievous, has swept into the Republic capital and kidnapped Chancellor Palpatine, leader of the Galactic Senate. As the Separatist Droid Army attempts to flee the besieged capital with their valuable hostage, two Jedi Knights lead a desperate mission to rescue the captive Chancellor...');
 
 
 // ep 4
@@ -26,7 +26,7 @@ crawlTexts.push('It is a period of civil war. Rebel spaceships, striking from a 
 
 // ep 5
 
-crawlTexts.push('It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy. Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth. The evil lord Darth Vader, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space...');
+crawlTexts.push('It is a bad time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy. Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth. The evil lord Darth Vader, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space...');
 
 // ep 6
 
@@ -49,7 +49,7 @@ for (var i = 0; i < crawlTexts.length; i++) {
     crawlTexts[i] = string_to_array(crawlTexts[i]);
 }
 
-var blacklist = ['thousand','is','a','the','in','but','to','and','or','his','her','of','that','can','by','even','from','having','has','were','not','now','star','systems'];
+var blacklist = ['galaxy','planet','thousand','is','a','the','in','but','to','and','or','his','her','of','that','can','by','even','from','having','has','were','not','now','star','systems'];
 
 function getOpeningCrawlText() {
 
@@ -57,7 +57,7 @@ function getOpeningCrawlText() {
     body = crawlTexts[Math.floor(Math.random() * crawlTexts.length)];
 
     var newBody = '';
-    var minNumberSynonyms = 6; 
+    var minNumberSynonyms = 2; 
     for (var i = 0; i < body.length; i++) {
         var word = body[i];
 
@@ -72,15 +72,16 @@ function getOpeningCrawlText() {
             hasComma = true; 
         } 
 
-      //  var syn = thesaurus.find(word.toLowerCase());
         if (!blacklist.includes(word)) {
+       // var syn = thesaurus.find(word.toLowerCase());
+
             var syn = thesaurus.find(word);
         } else {
             var syn = [word];
         }    
  
         if (syn.length >= minNumberSynonyms) {
-            newBody += " " + syn[Math.floor(Math.random() * 5)];
+            newBody += " " + syn[Math.floor(Math.random() * syn.length)];
             if (hasPeriod) {
                 newBody += ".";
             } else if (hasComma) {

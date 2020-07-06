@@ -8,12 +8,12 @@ I have no idea why I made this...
 
 ## Installation
 
-1. Clone the repo into a directory of your choice
-2. Run npm install in the directory
-3. Run npm start 
-4. Go to http://localhost:5000/ in a web browser
+1. Clone the repo into a directory of your choice.
+2. Run npm install in the directory.
+3. Run npm start.
+4. Go to http://localhost:5000/ in a web browser.
 
 ## Credits
-* [node thesaurus](https://github.com/daizoru/node-thesaurus), "a thesaurus of any languages using LibreOffice's dictionaries" 
-* Music by [Morpeef](https://www.youtube.com/user/Skateguy12345678910/videos)
-* Opening Crawl CSS by Geoff Graham [via CSS Tricks](https://css-tricks.com/snippets/css/star-wars-crawl-text/)
+* [node thesaurus](https://github.com/daizoru/node-thesaurus), "a thesaurus of any languages using LibreOffice's dictionaries." 
+* Music by [Morpeef](https://www.youtube.com/user/Skateguy12345678910/videos).
+* Opening Crawl CSS by Geoff Graham [via CSS Tricks](https://css-tricks.com/snippets/css/star-wars-crawl-text/).

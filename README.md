@@ -8,7 +8,7 @@ I have no idea why I made this...
 
 ## Demo
 
-http://www.starwarsmoviegenerator.com/
+http://starwarsmoviegenerator.com/
 
 ## Installation
 

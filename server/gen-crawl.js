@@ -57,7 +57,7 @@ function getOpeningCrawlText() {
     body = crawlTexts[Math.floor(Math.random() * crawlTexts.length)];
 
     var newBody = '';
-    var minNumberSynonyms = 2; 
+    var minNumberSynonyms = 6; 
     for (var i = 0; i < body.length; i++) {
         var word = body[i];
 
@@ -80,7 +80,7 @@ function getOpeningCrawlText() {
         }    
  
         if (syn.length >= minNumberSynonyms) {
-            newBody += " " + syn[Math.floor(Math.random() * syn.length)];
+            newBody += " " + syn[Math.floor(Math.random() * 5)];
             if (hasPeriod) {
                 newBody += ".";
             } else if (hasComma) {

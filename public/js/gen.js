@@ -80,7 +80,7 @@ function playAudio() {
     var audio = document.getElementById('song');
     audio.volume = 0.25;
     if (audio.paused) {
-        audio.playAudio();
+        audio.play();
     } else {
         audio.currentTime = 0
     }

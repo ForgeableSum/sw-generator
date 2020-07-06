@@ -8,10 +8,11 @@ I have no idea why I made this...
 
 ## Installation
 
-1. Clone the repo into a directory of your choice.
-2. Run npm install in the directory.
-3. Run npm start.
-4. Go to http://localhost:5000/ in a web browser.
+1. Install node and npm. 
+2. Clone the repo.
+3. Run `npm install`.
+4. Run `npm start`.
+5. Go to http://localhost:5000/ in a web browser.
 
 ## Credits
 * [node thesaurus](https://github.com/daizoru/node-thesaurus), "a thesaurus of any languages using LibreOffice's dictionaries." 

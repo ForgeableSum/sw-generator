@@ -22,3 +22,4 @@ http://starwarsmoviegenerator.com/
 * [node thesaurus](https://github.com/daizoru/node-thesaurus), "a thesaurus of any languages using LibreOffice's dictionaries." 
 * Music by [Morpeef](https://www.youtube.com/user/Skateguy12345678910/videos).
 * Opening Crawl CSS by Geoff Graham [via CSS Tricks](https://css-tricks.com/snippets/css/star-wars-crawl-text/).
+* Blizzard Entertainment - they accidentally banned my classic wow charactor for a day, so I needed something to do. 

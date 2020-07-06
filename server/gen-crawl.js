@@ -49,6 +49,7 @@ for (var i = 0; i < crawlTexts.length; i++) {
     crawlTexts[i] = string_to_array(crawlTexts[i]);
 }
 
+var blacklist = ['thousand','is','a','the','in','but','to','and','or','his','her','of','that','can','by','even','from','having','has','were','not','now','star','systems'];
 
 function getOpeningCrawlText() {
 
@@ -56,7 +57,7 @@ function getOpeningCrawlText() {
     body = crawlTexts[Math.floor(Math.random() * crawlTexts.length)];
 
     var newBody = '';
-    var minNumberSynonyms = 1; 
+    var minNumberSynonyms = 2; 
     for (var i = 0; i < body.length; i++) {
         var word = body[i];
 
@@ -72,8 +73,11 @@ function getOpeningCrawlText() {
         } 
 
       //  var syn = thesaurus.find(word.toLowerCase());
-        var syn = thesaurus.find(word); 
-
+        if (!blacklist.includes(word)) {
+            var syn = thesaurus.find(word);
+        } else {
+            var syn = [word];
+        }    
  
         if (syn.length >= minNumberSynonyms) {
             newBody += " " + syn[Math.floor(Math.random() * syn.length)];

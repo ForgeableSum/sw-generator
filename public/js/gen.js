@@ -38,9 +38,10 @@ function replaceCrawlText(epNumber,title) {
     jQuery.get("/spin-text", function (data) {
 
         $('#top_area').css({'background-color': '#000'}); 
-        $('.star-wars,.fade,#arrow').remove();
+        $('.star-wars,.fade,#arrow,img#gen').remove();
         $('#gen_button').css({'font-size': '14px'});
         $('#gen_button').text("Generate New Movie");
+        $('body').css({ 'background-image': 'url("/media/bg.jpg")' });
 
         crawl = crawl + data + '</div></section></body>'; 
         $('body').append(crawl);

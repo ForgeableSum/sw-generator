@@ -14,7 +14,7 @@
   "author": "ForgeableSum",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.1.0",
+    "express": "^4.17.3",
     "forever": "^3.0.0",
     "thesaurus": "0.0.1"
   }
